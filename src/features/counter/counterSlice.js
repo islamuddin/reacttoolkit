@@ -16,6 +16,9 @@ export const counterSlice = createSlice({
           },
         incrementByAmount: (state, action) => {
             state.value += parseInt(action.payload)
+        },
+        decrementByAmount: (state, action)=>{
+            state.value -= parseInt(action.payload)
         }
     }
 
@@ -23,7 +26,7 @@ export const counterSlice = createSlice({
 
 // step 2: export the action
 // todo explicitly export functions from the slice so that we can use in components
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { increment, decrement, incrementByAmount, decrementByAmount } = counterSlice.actions;
 
 // step 3: export the reducer: just for the store to recognize as a reducer
 export default counterSlice.reducer;
